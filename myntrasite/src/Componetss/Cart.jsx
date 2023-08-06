@@ -1,14 +1,27 @@
-import React, { useEffect, useState } from "react";
-// import { toast } from "react-hot-toast";
+import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import "../Componetss/CSS Files/Cart.css"
+import { AuthContext } from "../context/AuthContext";
 
 const Cart = () => {
+    const { state } = useContext(AuthContext);
   const [finalprice, setFinalPrice] = useState(0);
   const [userCart, setUserCart] = useState([]);
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+    role: "",
+  });
   const router = useNavigate();
 
   // console.log(userCart, "- userCart");
+
+  useEffect(() => {
+    if (state) {
+      setUserData(state.user);
+    }
+  }, [state]);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("Current-user"));
@@ -24,7 +37,7 @@ const Cart = () => {
         }
       }
     } else {
-     alert("Please login to watch all cart products.");
+      toast.error("Please login to watch all cart products.");
       router("/login");
     }
   }, []);
@@ -44,11 +57,11 @@ useEffect(() => {
     const user = JSON.parse(localStorage.getItem("Current-user"))
     if (user) {
         if (user?.role == "Seller") {
-            alert("Access granted only to Buyer.")
+          toast.error("Access granted only to Buyer.")
             router('/')
         }
     } else {
-        alert("You are not a Logged in user.")
+      toast.error("You are not a Logged in user.")
         router('/practicelogin')
     }
 }, [])
@@ -71,7 +84,7 @@ useEffect(() => {
     }
     setFinalPrice([]);  
     setUserCart([]);
-   alert("Your products will be delivered soon. Thankyou for shopping!")
+    toast.success("Your products will be delivered soon. Thankyou for shopping!")
   }
   return (
     <div id="screen">
@@ -80,7 +93,7 @@ useEffect(() => {
         <div id="cartleft">
             <div id="adcart">
                 <div>
-                    <p>Deliver to: <b>Meghali Kamble,410209</b></p>
+                    <p>Deliver to: <b>{userData.name},410209</b></p>
                     <p>Mansarovar, Navi Mumbai</p>
                 </div>
                 <div>
@@ -98,39 +111,45 @@ useEffect(() => {
             <div id="itemscart">
                 <div>
                 <input type="checkbox"/> 
-                <lable><b>1/1 ITEMS SELECTED</b></lable>
+                <lable><b></b></lable>
                 </div>
                 <div>
                     <span>REMOVE</span>
                     <span>MOVE TO WISHLIST</span>
                 </div>
             </div>
+
+            {userCart &&
+                  userCart.map((pro) => (
             <div id="productcart">
                 <div>
-                    <img src='https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/23456722/2023/5/29/95cbbecd-2db3-4822-b4d6-4006d262ebf71685344915764WomenWhitenBlueIndigoPrintWorkCottonKurtawithTrousersWithDup1.jpg'/>        </div>
+                    <img src={pro.image}/>
+                </div>
                 <div>
                     <div>
-                        <p><b>Karawal Fab</b></p>
-                        <p>Ethnic motif Pleated Anarakali Pure Cotton Kurta & Trouser.. </p>
-                        <p>Sold by : Shiv Shakti Fashion</p>
+                        <p><b>{pro.name}Saint G</b></p>
+                        <p></p>
+                        <p></p>
                     </div>
                     <div>
                         <span><b>Size : M</b></span>
-                        <span><b>Qty : 1</b></span>
+                        <span><b></b></span>
                     </div>
                     <div>
-                        <p><b>Rs. 1,499 </b>  </p>
-                        <p><b>30 days </b>return available</p>
-                        <p>Delivery by <b>8 June 2023</b></p>
+                        <p><b>₹{pro.price}</b></p>
+                        <p><b>15 days </b>return available</p>
+                        <p>Delivery by <b>8 August 2023</b></p>
                     </div>
                 </div>
             </div>
+            ))}
+
             <div id="wishcart">
                 <span><b>Add More From Wishlist</b></span>
             </div>
         </div>
         <div id="rightcart">
-            <div id="coupon">
+            <div id="couponcart">
                 <p>COUPON</p>
                 <div>
                     <p><b>Apply Coupons</b></p>
@@ -163,18 +182,18 @@ useEffect(() => {
                     <p>Convenience fee</p>
                 </div>
                 <div>
-                    <p>Rs.10,500</p>
+                    <p>₹{finalprice + finalprice}</p>
                     <p>Apply Coupon</p>
-                    <p>Rs.10</p>
+                    <p>₹0</p>
                 </div>
             </div>
             </div>
             <div id="amtcart">
                 <div>Total Amount</div>
-                <div>Rs.10,510</div>
+                <div>₹{finalprice}</div>
             </div>
             <div id="butcart">
-                <button>PLACE ORDER</button>
+                <button onClick={checkout}>PLACE ORDER</button>
             </div>
         </div>
       </div>
@@ -184,3 +203,5 @@ useEffect(() => {
 }
 
 export default Cart
+
+

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "../Componetss/CSS Files/Login.css"
 import { AuthContext } from "../context/AuthContext";
-// import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -41,23 +41,19 @@ const Login = () => {
           localStorage.setItem("Current-user", JSON.stringify(allUsers[i]));
           Login(allUsers[i]);
           setUserData({ email: "", password: "", role: "" });
-          alert("Login Successfull!");
+          toast.success("Login Successfull!");
           router("/");
           flag = true;
           break;
         }
       }
       if (flag == false) {
-        alert("Please Check your email & password.");
+        toast.error("Please Check your email & password.");
       }
     } else {
-      alert("Please fill the all fields.");
+      toast.error("Please fill the all fields.");
     }
   };
-
-  function newUser() {
-    router("/register");
-  }
 
 
   return (
@@ -101,9 +97,9 @@ const Login = () => {
       </div>
       <div>
         <p>By continuing, I agree to the </p>
-        <p>Terms of Use </p>
-        <p>& </p>
-        <p>Privacy Policy</p>
+        <p> Terms of Use </p>
+        <p> & </p>
+        <p> Privacy Policy</p>
       </div>
       
       <div>

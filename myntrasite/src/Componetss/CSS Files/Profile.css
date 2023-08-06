@@ -60,7 +60,7 @@
   }
   #left > div:nth-child(4) > p:nth-child(2) {
     font-weight: 700;
-    color: aqua;
+    color: rgb(8, 211, 211);
   }
   
   #right {
@@ -104,9 +104,12 @@
   }
   
   #pro > div:nth-child(3) {
-    width: 400px;
+    width: 300px;
     height: 45px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    /* border: 2px solid blue; */
+
   }
   
   #pro > div:nth-child(3) > button {
@@ -117,8 +120,6 @@
     outline: none;
     color: white;
     font-weight: 700;
-    margin-left: 70px;
-    margin-top: 20px;
     
   }
 
@@ -147,6 +148,7 @@
   color: #7a7a7a;
   margin-left: 90%;
   margin-top: 30px;
+  border:1px solid red;
 }
 
 #propop>div>form{

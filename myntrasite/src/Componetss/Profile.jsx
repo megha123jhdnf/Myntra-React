@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-// import { toast } from "react-hot-toast";
-import '../Componetss/CSS Files/Profile.css'
-
+import { toast } from "react-hot-toast";
+import "../Componetss/CSS Files/Profile.css"
 const Profile = () => {
 
 
@@ -32,7 +31,7 @@ const Profile = () => {
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("Current-user"));
     if (!currentUser) {
-      router("/login");
+      router('/login');
     }
     const allUsers = JSON.parse(localStorage.getItem("Users"));
     if (currentUser && allUsers) {
@@ -70,8 +69,8 @@ const Profile = () => {
     localStorage.setItem("Current-user", JSON.stringify(currentUser));
     localStorage.setItem("Users", JSON.stringify(allUsers));
     setUserData({});
-    alert("Profile updated.");
-    router("/profile");
+    toast.success("Profile updated.");
+    router('/profile');
   }
 
 
@@ -112,7 +111,7 @@ const Profile = () => {
       <div id="probody">
         <div>
           <h4>Account</h4>
-          <p>Meghali Kamble</p>
+          <p>{userData.name}</p>
         </div>
         <div id="content">
           <div id="left">
@@ -161,11 +160,11 @@ const Profile = () => {
                 </div>
                 <div id="that">
                   <p>{userData.name}</p>
-                  <p>7506577524</p>
+                  <p>7506577254</p>
                   <p>m.meghali555@gmail.com</p>
                   <p>FEMALE</p>
                   <p>31.01.1995</p>
-                  <p>Mansarovar, Navi Mumbai</p>
+                  <p>Mansarovar, Mumbai</p>
                   <p>-not added-</p>
                   <p>-not added-</p>
                 </div>

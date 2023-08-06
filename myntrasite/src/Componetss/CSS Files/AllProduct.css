@@ -40,22 +40,27 @@ font-weight: 600;
 
 #alltwo>div{
     border: 1px solid rgb(180, 176, 176);
+    width:30%;
     height: 40px;
     font-size: 15px;
     margin-left: 70%;
     padding: 5px 10px;
+
 }
 
 #alltwo>div>span:nth-child(1){
     color: grey;
+
 }
 
 #alltwo>div>span>select{
     border: none;
     outline: none;
     font-size: 15px;
-    width: 230px;
+    width: 100px;
     margin-left: 5px;
+    /* border: 1px solid rgb(255, 0, 85); */
+
 }
 #alltwo>div>span>i{
     color: grey;
@@ -139,7 +144,8 @@ display: flex;
 }
 
 #allright{
-    width: 80%;
+    width: 100%;
+    height: 800px;
     /* border: 1px solid blue; */
     display: flex;
     flex-wrap: wrap;
@@ -148,18 +154,19 @@ display: flex;
 #allright>div{
     position: relative;
     border: 1px solid rgb(220, 215, 215); 
-    margin-top: 20px;
-    height: 400px;
-    width: 23%;
+    margin-top: 10px;
+    height: 310px;
+    width: 22%;
     margin-left: 18px;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
+
 }
 
 
 #like{
     position: absolute;
-    left: 183px;
+    left: 110px;
     top:10px;
     background-size: contain;
 }
@@ -173,23 +180,25 @@ display: flex;
 #similar{
     position: absolute;
     background-size: auto 24px;
-    left: 183px;
-    top:240px;
+    left: 110px;
+    top:180px;
 }
 
 #similar>img{
     width: 100%;
     height: 100%;
+
 }
 
 #allright>div:hover{
  transform: scale(1.04);
  transition: 500ms;
+
 }
 
 #allright>div>div:nth-child(1){
     width: 100%;
-    height: 280px;
+    height: 220px;
 }
 
 #allright>div>div:nth-child(1)>img{
@@ -205,7 +214,7 @@ display: flex;
 }
 
 #allright>div>div:nth-child(2)>p:nth-child(1){
-    font-size: 17px;
+    font-size: 12px;
     font-weight: 600;
 }
 

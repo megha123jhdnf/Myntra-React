@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../Componetss/CSS Files/SingleProduct.css';
 import { useNavigate, useParams } from 'react-router-dom';
-// import { toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../context/AuthContext';
 
 const SingleProduct = () => {
@@ -67,20 +67,16 @@ const SingleProduct = () => {
           break;
         }
       }
-       alert("Product successfully added to cart!");
+      toast.success("Product successfully added to cart!");
       router("/cart");
     } else {
-      alert("You can't add a product before logging in!");
+      toast.error("You can't add a product before logging in!");
     }
   }
 
 
 
-
-
-
-
-  function uptoDate() {
+    function uptoDate() {
     setAllowUpdate(true);
   }
 
@@ -110,7 +106,7 @@ const SingleProduct = () => {
 
         localStorage.setItem("Products", JSON.stringify(allProduct));
         setProductData({ name: "", price: "", image: "", category: "Other" });
-        alert("Product Updated!");
+        toast.success("Product Updated!");
       }
     }
   }
@@ -151,7 +147,7 @@ const SingleProduct = () => {
                   <option value="Mens">Mens</option>
                   <option value="Womens">Womens</option>
                   <option value="Kids">Kids</option>
-                  <option value="Electronics">Electronics</option>
+                  <option value="Home & Living">Home & Living</option>
                 </select>
                 <br />
                 <label>Product Image :</label>
@@ -196,20 +192,20 @@ const SingleProduct = () => {
                 <img
                     src={single.image}/>
             </div>
-            <div>  
+            {/* <div>  
                 <img
                     src={single.image} />
-            </div>
+            </div> */}
         </div>
 
 
         <div id="toright">
             <div>
-                <h2>{single.name}</h2>
+                <h3>{single.name}</h3>
                 <p>{single.description}</p>
             </div>
             <div>
-                <h2>₹{single.price}</h2>
+                <h3>₹{single.price}</h3>
                 <p>inclusive of all taxes</p>
                 <h4> SELECT SIZE  </h4>
                 <div>

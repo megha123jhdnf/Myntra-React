@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../Componetss/CSS Files/Login.css';
-// import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -36,9 +36,9 @@ const Register = () => {
       localStorage.setItem("Users", JSON.stringify(usersArray));
       setUserData({ name: "", email: "", password: "", role: "Buyer" });
       router("/login");
-      alert("Registration Successfull.");
+      toast.success("Registration Successfull.");
     } else {
-      alert("Please fill the all fields.");
+      toast.error("Please fill the all fields.");
     }
   };
 

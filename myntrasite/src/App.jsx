@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './Componetss/Navbar';
-import Footer from './Componetss/Footer';
 import { Route, Routes } from 'react-router-dom';
+import Navbar from './Componetss/Navbar';
+// import Footer from './Componetss/Footer';
 import Home from './Componetss/Home';
 import Register from './Componetss/Register';
 import Login from './Componetss/Login';
@@ -17,6 +17,7 @@ function App() {
     <div>
       <Navbar/>
       <Routes>
+        
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/register' element={<Register/>} />
         <Route exact path='/login' element={<Login/>} />
@@ -27,7 +28,7 @@ function App() {
         <Route exact path='/profile' element={< Profile/>} />
 
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
       
       </div>
   );

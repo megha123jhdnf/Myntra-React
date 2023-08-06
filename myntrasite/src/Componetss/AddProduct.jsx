@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-// import { toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import '../Componetss/CSS Files/AddProduct.css'
 
 const AddProduct = () => {
@@ -25,9 +25,9 @@ const AddProduct = () => {
             localStorage.setItem("Products", JSON.stringify(productsArray))
             setProductData({ name: "", price: "", image: "", category: "Other" })
             router('/allproducts');
-            alert("Product added Successfully!")
+            toast.success("Product added Successfully!")
         } else {
-            alert("Please fill all the data!")
+          toast.error("Please fill all the data!")
         }
     }
 
@@ -39,11 +39,11 @@ const AddProduct = () => {
         const user = JSON.parse(localStorage.getItem("Current-user"))
         if (user) {
             if (user?.role == "Buyer") {
-                alert("Access granted only to Seller.")
+              toast.error("Access granted only to Seller.")
                 router('/')
             }
         } else {
-            alert("You are not a Logged in user.")
+          toast.error("You are not a Logged in user.")
             router('/login')
         }
     }, [])
@@ -80,7 +80,7 @@ const AddProduct = () => {
                     <option value="Mens">Mens</option>
                     <option value="Womens">Womens</option>
                     <option value="Kids">Kids</option>
-                    <option value="Electronics">Electronics</option>
+                    <option value="Home & Living">Home & Living</option>
                 </select><br />
           <label>Product Image :</label>
           <br />

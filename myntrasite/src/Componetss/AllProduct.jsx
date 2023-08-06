@@ -240,9 +240,9 @@ const AllProduct = () => {
               <div id="like">
                 <img
                   style={{
-                    width: "30px",
-                    height: "30px",
-                    border: "1px solid white",
+                    width: "20px",
+                    height: "20px",
+                    border: "1px solid grey",
                     borderRadius: "7px",
                     backgroundColor: "rgba(254,254,254,0.9)",
                   }}
@@ -252,9 +252,9 @@ const AllProduct = () => {
               <div id="similar">
                 <img
                   style={{
-                    width: "30px",
-                    height: "30px",
-                    border: "1px solid white",
+                    width: "20px",
+                    height: "20px",
+                    border: "1px solid grey",
                     borderRadius: "7px",
                     backgroundColor: "rgba(254,254,254,0.9)",
                   }}
