@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../Componetss/CSS Files/Login.css';
+import '../Componetss/CSS Files/Register.css';
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 

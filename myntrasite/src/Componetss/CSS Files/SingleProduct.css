@@ -116,7 +116,7 @@
 }
 
 #flex>div:nth-child(2)>input {
-    border: 1px solid black;
+    border: 1px solid rgb(245, 241, 241);
     background-color: black;
     color: white;
     width: 150px;

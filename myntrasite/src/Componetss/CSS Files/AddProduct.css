@@ -7,14 +7,17 @@
     display: flex;
     justify-content: center;
     margin-top: 75px;
+        /* border: 1px solid red; */
+
 }
 
 #addone>form>fieldset{
-    width: 480px;
+    width: 450px;
     text-align: centre;
     /* padding: 20px; */
     padding-left: 15px;
     padding-top: 6px;
+    margin-top: 10px;
     border-radius: 15px;
     border: none;
     box-shadow: 0 0 0.75rem 0 #ccc;
@@ -30,13 +33,15 @@
 
 #addone>form>fieldset>input{
     width: 98%;
-    margin-top: 10px;
-    height: 35px;
+    margin-top: 5px;
+    height: 30px;
     margin-bottom: 2px;
     text-align: centre;
     border: none;
     outline: none;
     border-bottom: 1px solid rgb(204, 204, 204);
+    /* border: 1px solid red; */
+
 }
 
 #addone>form>fieldset>select{
@@ -53,9 +58,9 @@
 #addone>form>fieldset>button{
     font-size: 16px;
     width: 170px;
-    height: 45px;
+    height: 40px;
     margin-left: 130px;
-    margin-top: 8px;
+    margin-top: 5px;
     margin-bottom: 5px;
     font-weight: 700;
     color: white;

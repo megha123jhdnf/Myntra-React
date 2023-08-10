@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Assistant, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+      Helvetica, Arial, sans-serif;
+  }
+  
+  #screen {
+    width: 100%;
+    /* border: 2px solid black; */
+  }
+  
+  
+  
+  #body {
+    width: 100%;
+    height: 700px;
+    border: 2px solid rgb(233, 222, 222);
+    background-color: #fdefeb;
+    margin-top: 60px;
+  }
+  
+  #signin {
+    width: 30%;
+    height: 440px;
+    /* border: 2px solid blue; */
+    margin: auto;
+    margin-top: 15px;
+    background-color: white;
+  }
+  
+  #signin > div:nth-child(1) > img {
+    width: 100%;
+    height:100px;
+    /* border: 2px solid blue; */
+
+  }
+  
+  #signin > div:nth-child(2) {
+    font-size: 12px;
+    margin-left: 40%;
+    margin-top: 5px;
+  
+  }
+  
+  #logform>form{
+    width: 80%;
+    margin: auto;
+    margin-top: 5px;
+  
+  }
+  
+  #logform>form>label{
+    color: #9d9e9f;
+    font-size: 12px;
+  
+  }
+  
+  #logform>form>input{
+    width: 100%;
+    height: 20px;
+    border: none;
+    outline: none;
+    border-bottom:1px solid #b0b1b2;
+    /* margin-bottom: 5px; */
+    /* border:1px solid red; */
+  }
+  
+  #logform>form>select{
+    width: 100%;
+    height: 27px;
+    border: none;
+    outline: none;
+    border-bottom:1px solid #b0b1b2;
+    margin-bottom: 5px;
+  
+  }
+  
+  #logform>form>button{
+    width: 85%;
+    height: 36px;
+    margin-left: 8px;
+    margin-top: 5px;
+    background-color: #ff3f6c;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    border: 2px solid #ff3f6c;
+    letter-spacing: 2px;
+    border-radius: 3px;
+  
+  }
+  
+  
+  
+  #signin > div:nth-child(4) {
+      display: flex;
+      font-size: 9px;
+      margin-top: 15px;
+      margin-left: 2%;
+      /* font-weight: 600; */
+      /* border:1px solid red; */
+  
+  }
+  
+  #signin > div:nth-child(4)>p:nth-child(2){
+      color: #ff3f6c;
+      font-weight: 600;
+      padding-left: 3px;
+  
+  }
+  
+  #signin > div:nth-child(4)>p:nth-child(4){
+    color: #ff3f6c;
+    font-weight: 600;
+    padding-left: 3px;
+  
+  
+  
+  }
+  
+  #signin > div:nth-child(4)>p:nth-child(3){
+      margin-right: 3px;
+      margin-left: 3px;
+      font-weight: 600;
+  
+  }
+  
+  
+  
+  #signin > div:nth-child(5){
+      display: flex;
+      font-size: 9px;
+      /* font-weight: 600; */
+      margin-top: 10px;
+      margin-left: 1% ;
+  
+  }
+  
+  #signin > div:nth-child(5)>p:nth-child(2){
+      color: #ff3f6c;
+      font-weight: 600;
+      padding-left: 5px;
+  
+      
+  
+  }
+  
+  
+  
+  
+  
